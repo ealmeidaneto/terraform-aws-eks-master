@@ -6,7 +6,7 @@ output "eks-master-security-group" {
 
 
 output "cluster_name" {
-  value       = aws_eks_cluster.eks[*].id
+  value       = element(aws_eks_cluster.eks[*].id, 0)
   description = "The name of the cluster"
 }
 
